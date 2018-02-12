@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_senate-bus-at-wellesley" default="compile.module.senate-bus-at-wellesley">
+  <dirname property="module.senate-bus-at-wellesley.basedir" file="${ant.file.module_senate-bus-at-wellesley}"/>
+  
+  <property name="module.jdk.home.senate-bus-at-wellesley" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.senate-bus-at-wellesley" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.senate-bus-at-wellesley" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.senate-bus-at-wellesley" value="-encoding UTF-8 -source 1.6 -target 1.6 ${compiler.args}"/>
+  
+  <property name="senate-bus-at-wellesley.output.dir" value="${module.senate-bus-at-wellesley.basedir}/out/production/Senate-Bus-at-Wellesley"/>
+  <property name="senate-bus-at-wellesley.testoutput.dir" value="${module.senate-bus-at-wellesley.basedir}/out/test/Senate-Bus-at-Wellesley"/>
+  
+  <path id="senate-bus-at-wellesley.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="senate-bus-at-wellesley.module.production.classpath"/>
+  
+  <path id="senate-bus-at-wellesley.runtime.production.module.classpath">
+    <pathelement location="${senate-bus-at-wellesley.output.dir}"/>
+  </path>
+  
+  <path id="senate-bus-at-wellesley.module.classpath">
+    <pathelement location="${senate-bus-at-wellesley.output.dir}"/>
+  </path>
+  
+  <path id="senate-bus-at-wellesley.runtime.module.classpath">
+    <pathelement location="${senate-bus-at-wellesley.testoutput.dir}"/>
+    <pathelement location="${senate-bus-at-wellesley.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.senate-bus-at-wellesley">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.senate-bus-at-wellesley">
+    <patternset refid="excluded.from.module.senate-bus-at-wellesley"/>
+  </patternset>
+  
+  
+  <target name="compile.module.senate-bus-at-wellesley" depends="compile.module.senate-bus-at-wellesley.production,compile.module.senate-bus-at-wellesley.tests" description="Compile module Senate-Bus-at-Wellesley"/>
+  
+  <target name="compile.module.senate-bus-at-wellesley.production" depends="register.custom.compilers" description="Compile module Senate-Bus-at-Wellesley; production classes"/>
+  
+  <target name="compile.module.senate-bus-at-wellesley.tests" depends="register.custom.compilers,compile.module.senate-bus-at-wellesley.production" description="compile module Senate-Bus-at-Wellesley; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.senate-bus-at-wellesley" description="cleanup module">
+    <delete dir="${senate-bus-at-wellesley.output.dir}"/>
+    <delete dir="${senate-bus-at-wellesley.testoutput.dir}"/>
+  </target>
+</project>

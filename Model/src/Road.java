@@ -54,8 +54,6 @@ public class Road {
         new BusDeport().start();
         new Halt().start();
 
-
-
     }
 
 
