@@ -45,7 +45,7 @@ public class Road {
         System.out.println("*********************************************************************");
 
         System.out.println("Enter Time Scale as per hundred ");
-        System.out.println("(eg : 100 ->30 min , 10->3 min , 1->18 seconds avg. bus gap/ avg rider gap :");
+        System.out.println("(eg : 100 ->20 min , 10->2 min , 1->12 seconds avg. bus gap/ avg rider gap :");
 
         Scanner timeScale = new Scanner(System.in);
         int timeS = timeScale.nextInt();
